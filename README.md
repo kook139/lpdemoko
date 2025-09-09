@@ -1,69 +1,104 @@
-# React + TypeScript + Vite
+# KooK no Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+KookのReactフロントエンドエンジニアとしての経歴とスキルを紹介するポートフォリオサイトです。React + TypeScript + Vite + Tailwind CSSで構築され、GitHub Pagesで公開されています。
 
-Currently, two official plugins are available:
+## 🚀 プロジェクト概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+このポートフォリオサイトでは以下の情報を掲載しています：
 
-## Expanding the ESLint configuration
+- **プロフィール**: Reactフロントエンドエンジニアとしての自己紹介
+- **スキル**: フロントエンド、バックエンド、DevOps、デザイン領域の技術スキル
+- **プロジェクト経験**: これまでに携わった主要プロジェクトの詳細
+- **連絡先**: GitHubやXなどのソーシャルリンク
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ 技術スタック
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend**: React 19.1.1, TypeScript, Tailwind CSS v4.1.13
+- **Build Tool**: Vite
+- **Deployment**: GitHub Actions + GitHub Pages
+- **Code Quality**: ESLint, TypeScript Strict Mode
+- **Design**: Responsive Design, モダンなUI/UX
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📁 プロジェクト構造
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/
+│   ├── layout/          # レイアウトコンポーネント
+│   │   └── Layout.tsx
+│   ├── sections/        # セクションコンポーネント
+│   │   ├── Header.tsx
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Skills.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Contact.tsx
+│   │   └── Footer.tsx
+│   └── ui/             # UIコンポーネント
+│       ├── TechTag.tsx
+│       └── SkillLevel.tsx
+├── constants/
+│   └── content.ts      # コンテンツ定数管理
+├── pages/
+│   └── HomePage.tsx    # ページコンポーネント
+├── App.tsx
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 開発環境のセットアップ
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. リポジトリのクローン
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/kook139/lpdemoko.git
+cd lpdemoko
 ```
+
+### 2. 依存関係のインストール
+
+```bash
+npm install
+```
+
+### 3. 開発サーバーの起動
+
+```bash
+npm run dev
+```
+
+ブラウザで `http://localhost:5173` にアクセスしてください。
+
+## 📦 ビルドとデプロイ
+
+### ローカルビルド
+
+```bash
+npm run build
+```
+
+### プレビュー
+
+```bash
+npm run preview
+```
+
+### GitHub Pages デプロイ
+
+このプロジェクトはGitHub Actionsによる自動デプロイが設定されています。`main`ブランチにプッシュすると自動的にGitHub Pagesにデプロイされます。
+
+## 🎨 主な機能
+
+- **レスポンシブデザイン**: モバイル・タブレット・デスクトップ対応
+- **モダンなUI**: Tailwind CSSによる洗練されたデザイン
+- **コンポーネント設計**: 再利用可能なコンポーネント構造
+- **定数管理**: 一元化されたコンテンツ管理
+- **TypeScript**: 型安全な開発環境
+- **SEO最適化**: メタタグ、カスタムファビコン設定
+
+## 🔧 カスタマイズ
+
+コンテンツの変更は `src/constants/content.ts` ファイルを編集してください。各セクションの内容が定数として管理されています。
+
+## 📄 ライセンス
+
+© 2025 KooK. All rights reserved.
